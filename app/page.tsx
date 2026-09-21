@@ -6,27 +6,20 @@ import { ApiStatus } from "@/components/ApiStatus";
 
 export default function Home() {
     return (
-        <main>
+        <main className="ux-shell">
             <AppHeader />
-            <br></br>
-
-            {/* 2. เรียกใช้งาน Component ตรงนี้ครับ */}
-            <ApiStatus />
-            <br></br>
-
-            <FeatureCard
-                title="Object Detection"
-                description="ตรวจจับวัตถุจากรูปภาพด้วย AI"
-            />
-            <br></br>
-            <FeatureCard
-                title="AI Chat"
-                description="สนทนากับAI"
-            />
-            <br></br>
+            <div className="ux-grid">
+                <FeatureCard
+                    title="Object Detection"
+                    description="ตรวจจับวัตถุจากรูปภาพด้วย AI"
+                />
+                <FeatureCard
+                    title="AI Chat"
+                    description="สนทนากับ Generative AI"
+                />
+            </div>
             <DetectionPanel />
-            <br></br>
-            <ApiStatus/>
+            <ApiStatus />
         </main>
     );
 }

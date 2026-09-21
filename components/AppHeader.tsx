@@ -1,6 +1,9 @@
 export function AppHeader() {
     return (
-        <header>
+        <header className="ux-header">
+            <p className="ux-eyebrow">
+                AI APPLICATION DEVELOPMENT
+            </p >
             <h1>
                 AI Vision Application
             </h1>
@@ -8,6 +11,10 @@ export function AppHeader() {
             <p>
                 Object Detection with AI
             </p>
-        </header>
+            <br></br>
+            <p className="ux-header-description">
+                Object Detection with AI
+            </p>
+        </header >
     );
 }
