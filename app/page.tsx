@@ -1,36 +1,31 @@
-import { AppHeader } from "@/components/AppHeader";
-import { FeatureCard } from "@/components/FeatureCard";
 import { DetectionPanel } from "@/components/DetectionPanel";
-// 1. เพิ่มบรรทัดนี้เพื่อ Import Component เข้ามาครับ
 import { ApiStatus } from "@/components/ApiStatus";
 import Link from "next/link";
-
 export default function Home() {
     return (
-        <main className="ux-shell">
-            <AppHeader />
-            <div className="ux-grid">
-                <FeatureCard
-                    title="Object Detection"
-                    description="ตรวจจับวัตถุจากรูปภาพด้วย AI"
-                />
-                <FeatureCard
-                    title="AI Chat"
-                    description="สนทนากับ Generative AI"
-                />
-            </div>
-            <section className="sp-home-card">
-                    <div>
-                        <p className="sp-home-eyebrow">NEW IN WEEK 6</p>
-                        <h2>Saved Prompts</h2>
-                        <p>Save and manage prompt ideas for your AI application.</p>
-                    </div>
-                    <Link href="/saved-prompts" className="sp-home-link">
-                        Open Saved Prompts →
+        <main className="roadops-main">
+            {/* แถบควบคุมด้านบน */}
+            <header className="roadops-navbar">
+                <div className="brand">
+                    <h1>ROADOPS AI <span>CENTRAL COMMAND</span></h1>
+                    <p className="subtitle">TRAFFIC & VEHICLE SURVEILLANCE SYSTEM</p>
+                </div>
+                <div className="nav-actions">
+                    <Link href="/saved-prompts" className="btn-nav">
+                        [ MANAGE PROMPTS ]
                     </Link>
-                </section>
-            <DetectionPanel />
-            <ApiStatus />
+                </div>
+            </header>
+
+            {/* พื้นที่หลักสำหรับแสดงระบบตรวจจับ */}
+            <div className="dashboard-content">
+                <DetectionPanel />
+            </div>
+
+            {/* แถบสถานะด้านล่าง */}
+            <footer className="status-footer">
+                <ApiStatus />
+            </footer>
         </main>
     );
 }
